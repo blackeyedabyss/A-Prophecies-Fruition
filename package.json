@@ -1,0 +1,22 @@
+{
+  "name": "a-prophecies-fruition",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackeyedabyss/A-Prophecies-Fruition.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blackeyedabyss/A-Prophecies-Fruition/issues"
+  },
+  "homepage": "https://github.com/blackeyedabyss/A-Prophecies-Fruition#readme",
+  "dependencies": {
+    "csv-parse": "^4.16.3"
+  }
+}
