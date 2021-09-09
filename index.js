@@ -8,7 +8,8 @@ const habitablePlanets = [];
 //Function which filters out whether if the planets are habitable or not:
 function isHabitablePlanet(planet){
     return planet['koi_disposition'] === 'CONFIRMED' 
-    && planet['koi_insol'] > 0.36 && planet['koi_insol'] < 1.11 &&
+    && planet['koi_insol'] > 0.36 &&
+    planet['koi_insol'] < 1.11 &&
     planet["koi_prad"] < 1.6;
 }
 
@@ -27,8 +28,8 @@ fs.createReadStream('kepler_data.csv')
         console.log(err);
     })
     .on('end', ()=> {
+        console.log(habitablePlanets.map((planet) => {
+            return planet['kepler_name'];
+        }))
         console.log(`${habitablePlanets.length} habitable planets found!`);
     });
-
-
-// parse();
