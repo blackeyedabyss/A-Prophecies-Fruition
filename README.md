@@ -6,6 +6,8 @@ By the Kepler space telescope which we can find under this link for KOI Table, w
 
 I downloaded the table of data in what's called a CSV format, and I'm going to set up a CSV parser, to read it with Node.js.
 
+Demo here: https://youtu.be/MDMIwJNfR5Q
+
 One of the biggest indicator, whether if the planet is habitable or not, is the Seff marker: the amount of times the light is reaching the planet, when compared to Earth. Hence, I'm going to use the Stellar Flux, in the dataset, it is titled as Insolation Flux [Earth Flux] column (koi_insol) to see, whether if the planet is habitable or not.
 
 The full list can be seen here: http://phl.upr.edu/projects/habitable-exoplanets-catalog in the Optimistic Sample of Potentially Habitable Exoplanets. 
