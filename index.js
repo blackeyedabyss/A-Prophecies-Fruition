@@ -3,7 +3,14 @@ const parse = require('csv-parse');
 const fs = require('fs');
 
 //Defining our variables:
-const results = [];
+const habitablePlanets = [];
+
+//Function which filters out whether if the planets are habitable or not:
+function isHabitablePlanet(planet){
+    return planet['koi_disposition'] === 'CONFIRMED' 
+    && planet['koi_insol'] > 0.36 && planet['koi_insol'] < 1.11 &&
+    planet["koi_prad"] < 1.6;
+}
 
 //Reading the file: 
 fs.createReadStream('kepler_data.csv')
@@ -12,14 +19,15 @@ fs.createReadStream('kepler_data.csv')
         columns: true,
     }))
     .on('data', (data)=> {
-   results.push(data); 
+    if(isHabitablePlanet(data)){
+        habitablePlanets.push(data); 
+    }
     })
     .on('error', (err)=> {
         console.log(err);
     })
     .on('end', ()=> {
-        console.log(results);
-        console.log("We're done with parsing the CSV file.")
+        console.log(`${habitablePlanets.length} habitable planets found!`);
     });
 
 
